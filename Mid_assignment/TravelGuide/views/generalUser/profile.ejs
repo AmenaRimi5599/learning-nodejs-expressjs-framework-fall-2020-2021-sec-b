@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<title>User Page</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="/abc/css/user.css">
+
+<body>
+
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
+  <h3 class="w3-bar-item">Menu</h3>
+  <a href="/generalUser/profile" class="w3-bar-item w3-button">Profile</a>
+</div>
+
+<div style="margin-left:15%; ">
+
+<div class="w3-container"  align="center">
+<div style="margin-top: 8%">
+  <div class="card" style="width: 18rem;">
+  <img src="/assets/img/<%= profilelist[0].image%>">
+  <div class="card-body">
+    <h5 class="card-title">My profile</h5>
+    <p class="card-text">I am a general user...</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%= profilelist[0].id%></li>
+    <li class="list-group-item"><%= profilelist[0].name%></li>
+    <li class="list-group-item"><%= profilelist[0].userName%></li>
+  </ul>
+  <div class="card-body">
+    <a class="btn btn-info" href="/generalUser/editProfile">Edit</a>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

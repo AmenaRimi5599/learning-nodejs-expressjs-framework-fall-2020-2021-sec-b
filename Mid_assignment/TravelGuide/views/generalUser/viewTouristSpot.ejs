@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<title>Tourist Spot</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="/abc/css/user.css">
+
+<body>
+
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
+  <h3 class="w3-bar-item">Tourist Guide</h3>
+  <input type="text" name="search" placeholder="search" id="search">
+  <a href="/generalUser/profile" class="w3-bar-item w3-button">Profile</a>
+  <a href="/logout" class="w3-bar-item w3-button">logout</a>
+</div>
+
+<div style="margin-left:15%; ">
+
+<div class="w3-container"  align="center">
+<div style="margin-top: 8%">
+  <div class="w3-container">
+      <div class="container" style="margin-left: 10%"> 
+  <table class="table table-hover" style="margin-top: 8%" align="center" id="events">
+        <tr>
+          <th>Id</th>
+          <th>country</th>
+          <th>place</th>
+          <th>traveling Medium</th>
+          <th>OverAll cost</th>
+          <th>Action</th>
+        </tr>
+
+        <% for(var i=0; i< allTouristlist.length; i++ ){ %>
+        <tr id="rows">
+          <td><%= allTouristlist[i].id %></td>
+          <td><%= allTouristlist[i].country %></td>
+          <td><%= allTouristlist[i].place %></td>
+          <td><%= allTouristlist[i].travelingMedium %></td>
+          <td><%= allTouristlist[i].cost %></td>
+          <td>
+            <a class="btn btn-success" href="/generalUser/comment/<%=allTouristlist[i].id%>">Comment</a> 
+          </td>
+        </tr>
+        <% } %>
+      </table>
+      </div>
+   </div>
+  </div>
+</div>
+
+</div>
+
+
+
+<script>
+  $(document).ready(function(){
+       $('#search').keyup(function(){
+            search_table($(this).val());
+       });
+       function search_table(value){
+            $('#events #rows').each(function(){
+                 var found = 'false'; 
+
+                 $(this).each(function(){
+                      if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                      {
+                           found = 'true';
+                      }
+                 });
+                 if(found == 'true')
+                 {
+                      $(this).show();
+                 }
+                 else
+                 {
+                      $(this).hide();
+                 }
+            });
+       }
+  });
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
