@@ -17,6 +17,18 @@
 			<table border="1">
 				<tr>
 					<td>Username</td>
+					<td><input type="text" name="name" value="{{$name}}"></td>
+				</tr>
+				<tr>
+					<td>Username</td>
+					<td><input type="text" name="companyName" value="{{$companyName}}"></td>
+				</tr>
+				<tr>
+					<td>Username</td>
+					<td><input type="text" name="contactNo" value="{{$contactNo}}"></td>
+				</tr>
+				<tr>
+					<td>Username</td>
 					<td><input type="text" name="username" value="{{$username}}"></td>
 				</tr>
 				<tr>
@@ -25,7 +37,7 @@
 				</tr>
 				<tr>
 					<td>type</td>
-					<td><input type="text" name="type" value="{{$type}}"></td>
+					<td><input type="text" name="userType" value="{{$userType}}"></td>
 				</tr>
 				<tr>
 					<td></td>
